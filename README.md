@@ -24,9 +24,13 @@ The repository contains 8 Python scripts.
 Data Preparation Scripts :
 
 **load_data.py**: Loads all the necessary data.
+
 **feature_selector.py**: Includes/excludes features from the dataset.
+
 **null_manager.py**: Handles null values in the dataset.
+
 **feature_engineering.py**: Performs feature transformations.
+
 **preprocessor.py**: Generates a preprocessor tailored to the data.
 
 Hyperparameter Tuning Script:
@@ -36,6 +40,7 @@ Hyperparameter Tuning Script:
 Main Scripts : 
 
 **testing_models.py**: Test the current model.
+
 **kaggle_script.py**: Used on Kaggle to generate predictions.
 
 For more details, feel free to consult the documentation inside the respective scripts.
