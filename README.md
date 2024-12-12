@@ -1,48 +1,46 @@
-# Starting kit on the bike counters dataset
+# Introduction
 
-Read the instruction from the [Kaggle challenge](https://www.kaggle.com/competitions/mdsb-2023/overview).
+This repository contains all the scripts we used to submit predictions 
+for the MSDB 2024 kaggle challenge on bike demand in Paris. 
 
-### Download the data
+# Access the data needed to run the code
 
-Download the data from Kaggle and put the files into the `data` folder.
+In addition to the datasets provided in the Kaggle competition, 
+we sourced an external dataset on weather conditions in Paris. 
+The main difference between this dataset and the one originally 
+provided is that it contains hourly data.
 
-Note that your goal is to train your model on `train.parquet` (and eventual external datasets)
-and then make predictions on `final_test.parquet`.
+You can download it via the following link : 
+https://www.data.gouv.fr/fr/datasets/r/a77b4d44-d361-4e59-b6cc-cbbf435a2d89
 
-### Install the local environment
+Dataset license : 
+Licence Ouverte / Open Licence version 2.0
+https://www.etalab.gouv.fr/licence-ouverte-open-licence/
 
-To run the notebook locally you will need the dependencies listed
-in `requirements.txt`. 
+# Repository Structure  
 
-It is recommended to create a new virtual environement for this project. For instance, with conda,
-```bash
-conda create -n bikes-count python=3.10
-conda activate bikes-count
-```
+The repository contains 8 Python scripts.
 
-You can install the dependencies with the following command-line:
+Data Preparation Scripts :
 
-```bash
-pip install -r requirements.txt -U
-```
+**load_data.py**: Loads all the necessary data.
+**feature_selector.py**: Includes/excludes features from the dataset.
+**null_manager.py**: Handles null values in the dataset.
+**feature_engineering.py**: Performs feature transformations.
+**preprocessor.py**: Generates a preprocessor tailored to the data.
 
-### The starter notebook
+Hyperparameter Tuning Script:
 
-Get started on this challenge with the `bike_counters_starting_kit.ipynb` notebook.
-This notebook is just a helper to show you different methods and ideas useful for your
-exploratory notebooks and your submission script.
+**opt_hg.py**: Tunes hyperparameters for the ```HistGradientBoostingRegressor```.
 
-Launch the notebook using:
+Main Scripts : 
 
-```bash
-jupyter lab bike_counters_starting_kit.ipynb
-```
+**testing_models.py**: Test the current model.
+**kaggle_script.py**: Used on Kaggle to generate predictions.
 
-### Submissions
+For more details, feel free to consult the documentation inside the respective scripts.
 
-Upload your script file `.py` to Kaggle using the Kaggle interface directly.
-The platform will then execute your code to generate your submission csv file,
-and compute your score.
 
-Note that your submission .csv file must have the columns "Id" and "bike_log_count",
-and be of the same length as `final_test.parquet`.
+
+Thank you for reviewing our code!
+Iliass & Pierre.
